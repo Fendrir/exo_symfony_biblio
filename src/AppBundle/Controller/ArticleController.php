@@ -5,6 +5,9 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+    /**
+     * @Route("/pageArticle")
+     */
 class ArticleController extends Controller
 {
     /**
@@ -33,6 +36,16 @@ class ArticleController extends Controller
     public function deleteAction()
     {
         return $this->render('AppBundle:Article:delete.html.twig', array(
+            // ...
+        ));
+    }
+
+    /**
+     * @Route("/view")
+     */
+    public function viewAction()
+    {
+        return $this->render('AppBundle:Article:view.html.twig', array(
             // ...
         ));
     }
