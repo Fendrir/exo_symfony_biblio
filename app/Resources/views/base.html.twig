@@ -19,13 +19,13 @@
                     <a class="navbar-brand" href="#">WebSiteName</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="/pageArticle/view">Articles</a></li>
+                    <li class="active"><a href="{{ path('homepage')}}">Home</a></li>
+                    <li><a href="{{ path('app_article_view') }}">Articles</a></li>
 
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <li><a href="/pageArticle/new">New Article</a></li>
+                        <li><a href="{{ path('app_article_new') }}">New Article</a></li>
                     {% else %}
-                        <li class="disabled"><a href="/pageArticle/view">New Article</a></li>
+                        <li class="disabled"><a href="{{ path('homepage') }}">New Article</a></li>
                     {% endif %}
 
                 </ul>
@@ -42,7 +42,7 @@
 
                         <li><a href="{{ path('fos_user_profile_edit') }}"><span class="glyphicon glyphicon-user"></span> {{ app.user.username }}</a></li>
 
-                        <li><a href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-log-out"></span>{{ ' Logout'|trans({}, 'FOSUserBundle') }}</a></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-log-out"></span>{{ ' Logout'|trans({ }, 'FOSUserBundle') }}</a></li>
 
                     {% else %}
 
